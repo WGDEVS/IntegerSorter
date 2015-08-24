@@ -126,6 +126,8 @@ Parameters:
 '''
 def recSortStep(List,Low,High):
     if (High - Low < 2):
+        if High - Low == 1 and List[High] < List[Low]:
+            List.insert(Low,List.pop(High))
         return
     pivot = 0
     if (List[Low]-List[(Low+High)/2])* (List[Low]-List[High]) <= 0:
